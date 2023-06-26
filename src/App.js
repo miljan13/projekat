@@ -13,6 +13,7 @@ import Kontakt from './komponente/kontakt';
 import Inbox from './komponente/inbox';
 import AdminPage from './komponente/adminPage';
 import Izmeni from './komponente/izmeni';
+import Analiza from './komponente/analiza';
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -181,6 +182,7 @@ setIzmenaID(id);
             <Route path="/admin/inbox" element={ <Inbox poruke={poruke} ></Inbox>}></Route>
             <Route path="/admin" element={ <AdminPage pica={pica} deletePice={deletePice} setIzmeniID={postaviIDZaIzmenu} ></AdminPage>}></Route>
             <Route path="/admin/izmeni" element={ <Izmeni id={izmenaID} ></Izmeni>}></Route>
+            <Route path="/admin/analiza" element={ <Analiza pica={pica} ></Analiza>}></Route>
         </Routes>
         <Footer></Footer>
         </BrowserRouter>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 
-import './LoginRegisterCSS.css';
+
 
 function Login({addToken}) {
     const [userData,setUserData]=useState({
@@ -38,6 +38,7 @@ function Login({addToken}) {
                             //token koji smo dobili od korisnika treba da sacuvamo u storag-u da bismo znali cemu taj korisnik ima pristup
                             window.sessionStorage.setItem("auth_token",res.data[0].token);
                             window.sessionStorage.setItem("auth_name",res.data[0].username);
+                            window.sessionStorage.setItem("auth_id",res.data[0].id);
                             addToken(res.data[0].token);
                             console.log(res.data[0].token);
                             if(res.data[0].role === 'admin')
@@ -57,13 +58,15 @@ function Login({addToken}) {
 
     }
     return (
-        <div className='login'>
-            <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-                <div className="wrapper wrapper--w780">
-                    <div className="card card-3">
-                        <div className="card-heading"></div>
-                        <div className="card-body">
-                            <h2 className="title">Log in</h2>
+        <div id='kontakt' >
+            <div id='container1'>
+                <div id='contact-box'>
+                    <div id="left">
+
+                    </div>
+                    <div id="right">
+
+                            <h2 >Log in</h2>
                             <form onSubmit={handleLogin} >                          
 
                                 <div className="input-group">
@@ -89,7 +92,7 @@ function Login({addToken}) {
                 </div>
             </div>
         </div>
-            </div>
+            
     )
 };
 

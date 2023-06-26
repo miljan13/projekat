@@ -40,7 +40,7 @@ class StavkaKorpeController extends Controller
             $request->all(),
             [
                 'korpa_id' =>  'required' , 
-                'pice_id' => 'required',  
+                'pice_id' => 'required',   
                 'kolicina' => 'required'  ,
                  
 
